@@ -33,7 +33,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "Laravel1\\": "app/"
         },
         "classmap": [
             "database/seeds",
