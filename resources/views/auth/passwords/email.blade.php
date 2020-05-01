@@ -7,6 +7,7 @@
             <div class="card text-right">
                 <div class="card-header">إعادة تعيين الرقم السري</div>
 
+                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
