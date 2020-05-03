@@ -40,7 +40,7 @@
                                 @endif
                                 @enderror
                             </div>
-                            <label for="email" class="col-md-4 col-form-label text-md-left">عنوان البريد الالكتروني</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-left">* <span>عنوان البريد الالكتروني</span></label>
 
                         </div>
 
@@ -54,7 +54,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <label for="password" class="col-md-4 col-form-label text-md-left"> الرقم السري</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-left">* <span> الرقم السري</span></label>
 
                         </div>
 

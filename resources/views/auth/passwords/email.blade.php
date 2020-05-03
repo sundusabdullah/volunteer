@@ -7,7 +7,7 @@
             <div class="card text-right">
                 <div class="card-header">إعادة تعيين الرقم السري</div>
 
-                
+
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -22,7 +22,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-٣">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('أرسل اعادة تعيين الرقم السري') }}
+                                        {{ __('إرسال اعادة تعيين الرقم السري') }}
                                     </button>
                                 </div>
                             </div>
@@ -41,9 +41,6 @@
                             </div>
                             <label for="email" class="col-md-3 col-form-label text-md-left">* <span>عنوان البريد الالكتروني</span></label>
                         </div>
-
-
-
                     </form>
                 </div>
             </div>
