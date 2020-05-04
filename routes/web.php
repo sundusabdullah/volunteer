@@ -12,14 +12,16 @@
 */
 // php artisan serve --port=9005
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 
 
 // inser form 
@@ -40,3 +42,9 @@ Route::get('show_comp', 'PageController@show_comp_func')->name('show_comp');
 
 Route::get('show_all_info', 'PageController@show_all_info_form');
 
+=======
+Route::post('/login', [
+    'uses' => 'Auth\LoginController@postLogIn',
+    'as'=>'Login'
+]);
+>>>>>>> 95c134a34668e1907389e9cb3d4e3a96ab2041f0

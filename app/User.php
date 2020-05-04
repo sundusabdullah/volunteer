@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Laravel1;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
