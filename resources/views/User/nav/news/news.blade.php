@@ -15,7 +15,7 @@
                 <div class="col-lg-4 col-md-6 mb-4">
 
                     <!--Card-->
-                    <div class="card">
+                    <div class="card ">
 
                         <!--Card image-->
                         <div class="view overlay">

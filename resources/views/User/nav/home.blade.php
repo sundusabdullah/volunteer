@@ -22,6 +22,6 @@
 
     @include('User.nav.about')
     @include('User.nav.news.news')​
-
+    @include('User.nav.ads.ads')​
 @endsection
 

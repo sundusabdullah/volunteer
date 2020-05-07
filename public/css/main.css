@@ -55,3 +55,30 @@ nav > ul > .active{
     border-bottom: none;
 }
 
+
+/* Media queries */
+@media (max-width: 765px) {
+
+    nav ul {
+        flex-direction: column-reverse;
+    }
+
+    nav li {
+        margin: .5em 0;
+    }
+    .active{
+        display: inline-block;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    h2{
+        font-size: 2rem;
+    }
+    h3{
+        font-size: 1.25rem;
+    }
+    h4{
+        font-size: 0.75rem;
+    }
+}
