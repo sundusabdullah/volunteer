@@ -1,8 +1,10 @@
 <?php
 
-namespace Laravel1\Http\Controllers;
+namespace App\Http\Controllers;
 
+use App\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -20,9 +22,24 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
+     *
      */
+    public function getInfo()
+    {
+        $about = About:: where('id', Auth::user()->id)->first();
+        return $about;
+    }
+
     public function index()
     {
-        return view('nav/home');
+        $about = $this->getInfo();
+        return view('user/nav/home', compact('about'));
+    }
+
+    //TODO :: To be deleted later
+    public function dashboard()
+    {
+        $about = $this->getInfo();
+        return view('admin/dashboard', compact('about'));
     }
 }

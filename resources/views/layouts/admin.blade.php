@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -18,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 
 
@@ -37,14 +36,14 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <!-- Authentication Links -->
-{{--                    @include("includes.leftHeader")--}}
+                    @include("includes.leftHeader")
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto"
                     {{--                        style="border: 1px solid magenta"--}}
                 >
-{{--                    @include("includes.rightHeader")--}}
+{{--                    @include("User.includes.rightHeader")--}}
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
@@ -54,13 +53,19 @@
         </div>
     </nav>
 
-    <main class="py-4 container">
+    <main class="py-4">
         @yield('content')
     </main>
 
-    <main class="py-4 ">
-        @yield('footer')
-    </main>
+    <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+        <hr class="my-4">
+        <div class="footer-copyright py-3">
+            الحقوق الملكية © لفريق العمل التطوعي
+
+        </div>
+
+    </footer>
 </div>
 </body>
 </html>

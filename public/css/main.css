@@ -1,0 +1,57 @@
+
+/**{*/
+/*    border: 2px solid purple; !* For debugging purposes *!*/
+/*}*/
+
+body{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    background-color: white;
+}
+
+.active, .borderBottom{
+    border-bottom: 0.125rem solid #f6993f;
+}
+/* =================
+    Typography
+================= */
+
+h1, h2, h3{
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    margin-top: 0;
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 3rem;
+}
+h3{
+    font-size: 1.25rem;
+}
+h4{
+    font-size: 1rem;
+}
+.borderBottom{
+    display:inline-block;
+    text-align:center;
+}
+#mainPage{
+    margin-top: -2rem;
+}
+.about-title, .news-title{
+    font-size: 1.5rem;
+}
+.about-info{
+    margin: 2rem 0;
+}
+section{
+    max-width: 80%;
+}
+nav > ul > .active{
+    border-bottom: none;
+}
+

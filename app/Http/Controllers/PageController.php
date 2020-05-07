@@ -12,7 +12,7 @@ class PageController extends Controller
     public function insert_comp_form(){
         return view('insert_comp');
     }
-  
+
 
     public function inset_comp_func(Request $request){
         $all_data = new insert_comp;
@@ -25,7 +25,7 @@ class PageController extends Controller
         $image_3 = $request->input('image_3');
 
         if(isset($_POST['insert'])){
-            
+
             $all_data->title = $title;
             $all_data->description = $description ;
             $all_data->image_1 = $image_1;
@@ -45,12 +45,12 @@ class PageController extends Controller
 
     public function show_comp_func(){
         $informations = DB::select('select * from accomplish');
-        return view('show_comp',['informations'=>$informations]); 
+        return view('show_comp',['informations'=>$informations]);
     }
 
     public function show_all_info_form(){
         return view('show_all_info');
     }
 
-   
+
 }
