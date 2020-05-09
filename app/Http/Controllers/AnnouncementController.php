@@ -20,7 +20,7 @@ class AnnouncementController
         $announcement-> event_description = $request['ِevent_description'];
         $announcement-> seat_no = $request['seat_no'];
         $announcement->save();
-        return redirect()->back();
+        return redirect()->route('Announcement');
     }
     public static function getAnnouncementInfo()
     {
@@ -33,10 +33,14 @@ class AnnouncementController
        $announcement = Announcement::find($id);
         return view('user.nav.ads.details', compact('announcement'));
     }
-    public function getAnnouncementForm(){
+    public function getAnnouncementEditForm(){
         $announcements= $this->getAnnouncementInfo();
         return view('admin.nav.ads.show', compact('announcements'));
 
+    }
+    public function getAnnouncementAddForm(){
+
+        return view('admin.nav.ads.add');
     }
     public function getDeleteAnnouncement($id){
         $announcement = Announcement::where('id', $id)->first();

@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 @section('content')
 
+    <br/><br/>
+    <nav class="text-center justify-content-center offset-4" style="font-size: 1rem;">
+        <a href="{{route('Announcement')}}" class="text-muted">الأعلانات</a> >
+        <a href="" class="text-dark pb-1" style="pointer-events: none; cursor: default;">اضافة أعلان</a>
+    </nav>
     <form method="POST" action="{{route('announcement.add')}}" class="mt-5">
         @csrf
         <p class="offset-md-7 mb-4"><span>يعني ان الحقل مطلوب</span> *</p>

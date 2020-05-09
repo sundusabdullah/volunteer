@@ -40,11 +40,15 @@ class HomeController extends Controller
             return view('user/nav/ads/ads_data', compact('data'))->render();
         }
     }
-
+    public static function  getAboutInfo()
+    {
+        $about = About:: where('id', Auth::user()->id)->first();
+        return $about;
+    }
     //TODO :: To be deleted later.
     public function dashboard()
     {
-        $about = AboutController::getAboutInfo();
+        $about = $this->getAboutInfo();
         return view('admin/dashboard', compact('about'));
     }
 }

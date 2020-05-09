@@ -40,8 +40,12 @@ Route::get('/About', [
 ]);
 
 Route::get('/Announcement', [
-    'uses' => 'AnnouncementController@getAnnouncementForm',
+    'uses' => 'AnnouncementController@getAnnouncementEditForm',
     'as' => 'Announcement'
+]);
+Route::get('/addAnnouncement', [
+    'uses' => 'AnnouncementController@getAnnouncementAddForm',
+    'as' => 'Announcement.add'
 ]);
 Route::get('/delete-announcement/{id}', [
     'uses' => 'AnnouncementController@getDeleteAnnouncement',

@@ -10,6 +10,7 @@
             padding: 0;
         }
     </style>
+    <a href="{{route('Announcement.add')}}" class="btn btn-primary offset-10 mb-3">اضافة اعلان آخر</a>
     <table class="table" class="col-12 p-5" style="max-width: 100%">
 
         <thead>
@@ -40,4 +41,6 @@
         </tbody>
         @endforeach
     </table>
+    <div class=" d-flex justify-content-center this"> {{  $announcements->links() }} </div>
+
 @endsection
