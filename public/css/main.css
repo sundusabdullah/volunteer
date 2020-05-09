@@ -51,7 +51,7 @@ h4{
 section{
     max-width: 80%;
 }
-nav > ul > .active{
+nav > ul > .active, section .active {
     border-bottom: none;
 }
 

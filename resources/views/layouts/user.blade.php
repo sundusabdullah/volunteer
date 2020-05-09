@@ -10,7 +10,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/datarangepicker.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -61,11 +65,11 @@
 
             <hr class="my-4">
             <div class="footer-copyright py-3">
-                                 الحقوق الملكية © لفريق العمل التطوعي
+                                 جميع الحقوق الملكية محفوظة © لفريق العمل التطوعي
 
             </div>
-
         </footer>
+
     </div>
 </body>
 </html>

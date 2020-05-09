@@ -58,3 +58,19 @@ Route::post('/login', [
     'as'=>'Login'
 ]);
 
+
+
+Route::get('ads/add', function (){
+    return view('admin/nav/ads/add');
+});
+
+Route::post('ads/add', [
+    'uses' => 'AnnouncementController@postSaveAnnouncement',
+    'as'=>'announcement.add'
+    ]);
+
+/* --Ajax--- */
+Route::get('/pagination', 'AnnouncementController@index');
+
+Route::post('pagination/fetch', 'AnnouncementController@fetch')->name('pagination.fetch');
+Route::post('pagination/fetch1', 'HomeController@fetch')->name('pagination.fetch1');

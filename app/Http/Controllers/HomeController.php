@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use  App\About;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -24,22 +24,37 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      *
      */
-    public function getInfo()
+    public function getAboutInfo()
     {
         $about = About:: where('id', Auth::user()->id)->first();
         return $about;
     }
+    public function getAnnouncementInfo()
+    {
+        $announcements = DB::table('announcements')->paginate(1);
+
+        return $announcements;
+    }
 
     public function index()
     {
-        $about = $this->getInfo();
-        return view('user/nav/home', compact('about'));
+        $about = $this->getAboutInfo();
+        $data = $this->getAnnouncementInfo();
+        return view('user/nav/home', compact('about', 'data'));
+    }
+    function fetch(Request $request)
+    {
+        if($request->ajax())
+        {
+            $data = DB::table('announcements')->paginate(1);
+            return view('user/nav/ads/ads_data', compact('data'))->render();
+        }
     }
 
     //TODO :: To be deleted later
     public function dashboard()
     {
-        $about = $this->getInfo();
+        $about = $this->getAboutInfo();
         return view('admin/dashboard', compact('about'));
     }
 }

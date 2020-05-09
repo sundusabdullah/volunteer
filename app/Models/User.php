@@ -37,6 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function about(){
-        return $this->hasOne(About::class);
+        return $this->hasOne('App\About');
+    }
+    public function announcement(){
+        return $this->hasMany("App\Announcement");
     }
 }
