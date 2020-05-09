@@ -24,7 +24,7 @@
         {
             var _token = $("input[name=_token]").val();
             jQuery.ajax({
-                url:"{{ route('pagination.fetch1') }}",
+                url:"{{ route('pagination.fetch') }}",
                 method:"POST",
                 data:{_token:_token, page:page},
                 success:function(data)

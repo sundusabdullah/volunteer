@@ -31,7 +31,7 @@ class HomeController extends Controller
     }
     public function getAnnouncementInfo()
     {
-        $announcements = DB::table('announcements')->paginate(1);
+        $announcements = DB::table('announcements')->paginate(6);
 
         return $announcements;
     }
@@ -46,12 +46,12 @@ class HomeController extends Controller
     {
         if($request->ajax())
         {
-            $data = DB::table('announcements')->paginate(1);
+            $data = DB::table('announcements')->paginate(6);
             return view('user/nav/ads/ads_data', compact('data'))->render();
         }
     }
 
-    //TODO :: To be deleted later
+    //TODO :: To be deleted later.
     public function dashboard()
     {
         $about = $this->getAboutInfo();

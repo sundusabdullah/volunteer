@@ -72,5 +72,4 @@ Route::post('ads/add', [
 /* --Ajax--- */
 Route::get('/pagination', 'AnnouncementController@index');
 
-Route::post('pagination/fetch', 'AnnouncementController@fetch')->name('pagination.fetch');
-Route::post('pagination/fetch1', 'HomeController@fetch')->name('pagination.fetch1');
+Route::post('pagination/fetch', 'HomeController@fetch')->name('pagination.fetch');
