@@ -24,11 +24,7 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      *
      */
-    public function getAboutInfo()
-    {
-        $about = About:: where('id', Auth::user()->id)->first();
-        return $about;
-    }
+
 
     public function index()
     {
@@ -48,7 +44,7 @@ class HomeController extends Controller
     //TODO :: To be deleted later.
     public function dashboard()
     {
-        $about = $this->getAboutInfo();
+        $about = AboutController::getAboutInfo();
         return view('admin/dashboard', compact('about'));
     }
 }

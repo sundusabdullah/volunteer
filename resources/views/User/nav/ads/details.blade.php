@@ -9,7 +9,7 @@
             <nav class="text-right justify-content-center" style="font-size: 1rem">
                 <a href="/" class="text-muted">الرئيسية</a> >
                 <a href="/#announcement" class="text-muted">الأعلانات</a> >
-                <a href="" class="text-dark pb-1" style="pointer-events: none; cursor: default;">العنوان</a>
+                <a href="" class="text-dark pb-1" style="pointer-events: none; cursor: default;">{{ $announcement->event_name }}</a>
 
             </nav>
             <div class="row justify-content-center">

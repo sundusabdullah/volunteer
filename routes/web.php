@@ -29,13 +29,33 @@ Route::get('ads/details/{id}','AnnouncementController@getAnnouncementDetail' )->
 
 Route::get('/admin-dashboard', 'HomeController@dashboard');
 
-Route::post('/updateabout', [
+Route::post('/updateAbout', [
     'uses' => 'AboutController@postSaveAbout',
     'as' => 'about.save'
 ]);
 
+Route::get('/About', [
+    'uses' => 'AboutController@getUpdateAbout',
+    'as' => 'about'
+]);
 
+Route::get('/Announcement', [
+    'uses' => 'AnnouncementController@getAnnouncementForm',
+    'as' => 'Announcement'
+]);
+Route::get('/delete-announcement/{id}', [
+    'uses' => 'AnnouncementController@getDeleteAnnouncement',
+    'as' => 'announcement.delete'
+]);
+Route::get('/edit-announcement/{id}', [
+    'uses' => 'AnnouncementController@getEditAnnouncement',
+    'as' => 'announcement.edit'
+]);
 
+Route::post('/update-announcement/{id}', [
+    'uses' => 'AnnouncementController@postEditAnnouncement',
+    'as' => 'announcement.update'
+]);
 
 // inser form
 Route::get('insert_comp', 'PageController@insert_comp_form');
@@ -71,7 +91,7 @@ Route::post('ads/add', [
     'as'=>'announcement.add'
     ]);
 
-/* --Ajax--- */
+/* -- Ajax--- */
 Route::get('/pagination', 'AnnouncementController@index');
 
 Route::post('pagination/fetch', 'HomeController@fetch')->name('pagination.fetch');

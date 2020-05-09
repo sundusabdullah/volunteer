@@ -23,4 +23,13 @@ class AboutController extends Controller
         $about->update();
         return redirect()->back();
     }
+    public static function  getAboutInfo()
+    {
+        $about = About:: where('id', Auth::user()->id)->first();
+        return $about;
+    }
+    public function getUpdateAbout(){
+        $about = $this->getAboutInfo();
+        return view ('admin/nav/about/updateAbout',  compact('about'));
+    }
 }
