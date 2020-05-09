@@ -11,9 +11,10 @@
             <h3 class="alert-dark p-5">إعلان</h3>
             <hr>
             <h4 class="card-title">{{ $announcement->event_name }}</h4>
+            <p dir="rtl">{{Str::limit($announcement->event_description , 100) }}</p>
             <!--Text-->
             <p class="card-text"></p>
-            <a href="{{route('read')}}"  class="btn btn-primary btn-md">
+            <a href="{{route('details', ['id'=>$announcement->id] ) }}"  class="btn btn-primary btn-md">
                 التفاصيل
                 <i class="fas fa-play ml-2"></i>
             </a>

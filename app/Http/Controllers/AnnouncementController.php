@@ -22,18 +22,16 @@ class AnnouncementController
         $announcement->save();
         return redirect()->back();
     }
-    function index()
+    public static function getAnnouncementInfo()
     {
-        $data = DB::table('announcements')->paginate(1);
-        return view('pagination_parent', compact('data'));
+        $announcements = DB::table('announcements')->paginate(6);
+
+        return $announcements;
     }
 
-    function fetch(Request $request)
-    {
-        if($request->ajax())
-        {
-            $data = DB::table('announcements')->paginate(1);
-            return view('pagination_child', compact('data'))->render();
-        }
+    public function getAnnouncementDetail($id){
+
+       $announcement = Announcement::find($id);
+        return view('user.nav.ads.details', compact('announcement'));
     }
 }

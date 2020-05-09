@@ -29,17 +29,11 @@ class HomeController extends Controller
         $about = About:: where('id', Auth::user()->id)->first();
         return $about;
     }
-    public function getAnnouncementInfo()
-    {
-        $announcements = DB::table('announcements')->paginate(6);
-
-        return $announcements;
-    }
 
     public function index()
     {
         $about = $this->getAboutInfo();
-        $data = $this->getAnnouncementInfo();
+        $data = AnnouncementController::getAnnouncementInfo();
         return view('user/nav/home', compact('about', 'data'));
     }
     function fetch(Request $request)

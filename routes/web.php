@@ -21,9 +21,11 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/read-more', function (){
+Route::get('new/read-more', function (){
     return view ('user/nav/news/read-more');
 })->name('read');
+
+Route::get('ads/details/{id}','AnnouncementController@getAnnouncementDetail' )->name('details');
 
 Route::get('/admin-dashboard', 'HomeController@dashboard');
 
