@@ -21,16 +21,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('volunteer', 'VolunteerController');
 
-// //create form 
+// //create form
 // Route::get('create/{id}', 'VolunteerController@create');
-// //create function 
+// //create function
 // Route::post('/create', 'VolunteerController@store');
 
-// //edit form 
+// //edit form
 // Route::get('edit/{id}', 'VolunteerController@edit');
-// //edit function 
+// //edit function
 // Route::post('edit', 'VolunteerController@update');
-
 
 
 
