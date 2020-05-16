@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> فريق العمل التطوعي</title>
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -49,7 +49,7 @@
                     >
                         @include("User.includes.rightHeader")
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            {{ config('app.name', 'Laravel') }}
+                            فريق العمل التطوعي
                         </a>
 
                     </ul>

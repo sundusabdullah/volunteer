@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use  App\About;
 use Illuminate\Support\Facades\Auth;
-
+use App\Volunteer;
 class HomeController extends Controller
 {
     /**
@@ -32,6 +32,13 @@ class HomeController extends Controller
         $data = AnnouncementController::getAnnouncementInfo();
         return view('user/nav/home', compact('about', 'data'));
     }
+    public function index2()
+    {
+        $volunteer = new Volunteer ;
+
+        return view('home', compact('volunteer'));
+    }
+
     function fetch(Request $request)
     {
         if($request->ajax())

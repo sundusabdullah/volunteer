@@ -19,7 +19,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('new/read-more', function (){
     return view ('user/nav/news/read-more');
@@ -70,14 +70,14 @@ Route::post('insert_comp', 'PageController@inset_comp_func')->name('insert_comp'
 
 
 
-// // show form
-Route::get('show_comp', 'PageController@show_comp_form');
-// // show Function
-Route::get('show_comp', 'PageController@show_comp_func')->name('show_comp');
-
-
-
-Route::get('show_all_info', 'PageController@show_all_info_form');
+//// // show form
+//Route::get('show_comp', 'PageController@show_comp_form');
+//// // show Function
+//Route::get('show_comp', 'PageController@show_comp_func')->name('show_comp');
+//
+//
+//
+//Route::get('show_all_info', 'PageController@show_all_info_form');
 
 Route::post('/login', [
     'uses' => 'Auth\LoginController@postLogIn',
@@ -99,3 +99,15 @@ Route::post('ads/add', [
 Route::get('/pagination', 'AnnouncementController@index');
 
 Route::post('pagination/fetch', 'HomeController@fetch')->name('pagination.fetch');
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+//Auth::routes();
+//
+Route::get('/home', 'HomeController@index2');
+
+Route::resource('volunteer', 'VolunteerController');
+
+Route::get('admin', 'VolunteerController@admin');
